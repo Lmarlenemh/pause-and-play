@@ -1,0 +1,250 @@
+body {
+  font-family: 'Open Sans', sans-serif;
+  background-color: #f8f9fa;
+  margin: 0;
+  padding: 0;
+  color: #333;
+}
+
+/* Modo oscuro */
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+/* From Uiverse.io by ami-hp */ 
+.darkThemeBtn * {
+  transition: all 0.3s;
+}
+
+.darkThemeBtn input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.darkThemeBtn label {
+  border: 1px solid #fff;
+  background: #00A6D7;
+  border-radius: 10px;
+  height: 46px;
+  width: 46px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.darkThemeBtn label:active {
+  border-radius: 5px;
+}
+
+.darkThemeBtn label svg {
+  position: absolute;
+  width: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  fill: #FFF165;
+}
+
+.darkThemeBtn label svg.sun {
+  width: 20px;
+  opacity: 0;
+  fill: #00A6D7;
+}
+
+.darkThemeBtn label svg.moon {
+  opacity: 1;
+}
+
+.darkThemeBtn input:checked + label {
+  background: #FFF165;
+}
+
+.darkThemeBtn input:checked + label svg.sun {
+  opacity: 1;
+}
+
+.darkThemeBtn input:checked + label svg.moon {
+  opacity: 0;
+}
+
+.darkThemeBtn input:checked ~ span {
+  background-color: #333;
+}
+/* Modo oscuro */
+
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 120vh;
+  text-align: center;
+  padding: 20px;
+}
+
+.instruction {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+
+.puzzle-board {
+  position: relative;
+  width: 300px; /* Tamaño total del tablero */
+  height: 300px; /* Tamaño total del tablero */
+  border: 3px solid #00A6D7;
+  background-color: #e9f7ff;
+  display: grid; 
+  grid-template-columns: repeat(3, 1fr); /* 3 columnas iguales */
+  grid-template-rows: repeat(3, 1fr); /* 3 filas iguales */
+  gap: 1px; /* Espacio entre las piezas */
+}
+
+.puzzle-pieces {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr); /* 2 columnas iguales */
+  grid-template-rows: repeat(3, 1fr); /* 3 filas iguales */
+  width: 250px;
+  height: 250px;
+  gap: 3px;
+  justify-content: center;
+}
+
+.puzzle-slot {
+  width: 100%; /* Las ranuras llenan el espacio del grid */
+  height: 100%; /* Las ranuras llenan el espacio del grid */
+  background-color: #e9f7ff;
+  border: 1px dashed #999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.puzzle-piece {
+  width: 100%; /* Las piezas llenan el espacio del grid */
+  height: 100%; /* Las piezas llenan el espacio del grid */
+  cursor: grab;
+  object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+}
+
+.puzzle-piece.dragging {
+  opacity: 0.5;
+}
+
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+/* Botón de Inicio */
+#back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  max-width: 8%;
+  cursor: pointer;
+}
+  
+  #dark-mode-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+
+  #next-puzzle-btn {
+    background-color: #00A6D7;
+    color: white;
+  }
+
+
+/* Botón de Juego Aleatorio */
+footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#shuffle-btn {
+  /*position: fixed;*/
+  background-color: #00A6D7;
+  color: white;
+  font-size: 1.5em;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+  /* Estilos Responsivos para Imágenes y Textos */
+@media (max-width: 1024px) {
+  /* Imágenes */
+  #image-container img {
+    max-width: 120px; /* Ajusta tamaño de imagen para pantallas medianas */
+  }
+
+  #back-btn {
+    max-width: 15%; /* Logo/botón de inicio más grande */
+  }
+
+  /* Textos */
+  h1.title {
+    font-size: 1.8rem; /* Disminuye ligeramente el tamaño del título */
+  }
+
+  button {
+    font-size: 0.9em; /* Botones ligeramente más compactos */
+  }
+}
+
+@media (max-width: 768px) {
+  /* Imágenes */
+  #image-container img {
+    max-width: 100px; /* Reduce aún más el tamaño de la imagen */
+  }
+
+  #back-btn {
+    max-width: 15%; /* Logo/botón ajustado */
+  }
+
+  /* Textos */
+  h1.title {
+    font-size: 1.5rem; /* Título más compacto */
+  }
+
+  button {
+    font-size: 0.85em; /* Tamaño de texto en botones más pequeño */
+  }
+
+  p.greeting {
+    font-size: 0.9rem; /* Texto auxiliar más pequeño */
+  }
+}
+
+@media (max-width: 480px) {
+  /* Imágenes */
+  #image-container img {
+    max-width: 80px; /* Imagen reducida para móviles */
+  }
+
+  #back-btn {
+    max-width: 20%; /* Logo/botón más visible en pantallas pequeñas */
+  }
+
+  /* Textos */
+  h1.title {
+    font-size: 1.2rem; /* Título más pequeño */
+  }
+
+  button {
+    font-size: 0.8em; /* Botones compactos */
+  }
+
+  p.greeting {
+    font-size: 0.8rem; /* Texto auxiliar compacto */
+  }
+}

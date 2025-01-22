@@ -1,0 +1,144 @@
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color: #f8f9fa;
+    margin: 0;
+    padding: 0;
+    color: #333;
+  }
+  
+/* Modo oscuro */
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
+/* From Uiverse.io by ami-hp */ 
+.darkThemeBtn * {
+  transition: all 0.3s;
+}
+
+.darkThemeBtn input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.darkThemeBtn label {
+  border: 1px solid #fff;
+  background: #00A6D7;
+  border-radius: 10px;
+  height: 46px;
+  width: 46px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.darkThemeBtn label:active {
+  border-radius: 5px;
+}
+
+.darkThemeBtn label svg {
+  position: absolute;
+  width: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  fill: #FFF165;
+}
+
+.darkThemeBtn label svg.sun {
+  width: 20px;
+  opacity: 0;
+  fill: #00A6D7;
+}
+
+.darkThemeBtn label svg.moon {
+  opacity: 1;
+}
+
+.darkThemeBtn input:checked + label {
+  background: #FFF165;
+}
+
+.darkThemeBtn input:checked + label svg.sun {
+  opacity: 1;
+}
+
+.darkThemeBtn input:checked + label svg.moon {
+  opacity: 0;
+}
+
+.darkThemeBtn input:checked ~ span {
+  background-color: #333;
+}
+/* Modo oscuro */
+  
+  #mascot-img {
+    max-width: 15%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+  }
+
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    text-align: center;
+    padding: 20px;
+  }
+  
+  .instruction {
+    font-size: 1.5em;
+    margin-bottom: 20px;
+  }
+  
+  .movement-display {
+    font-size: 1.5em;
+    font-weight: bold;
+    color: #00A6D7;
+    margin: 20px 0;
+    padding: 10px 20px;
+    border: 2px solid #00A6D7;
+    border-radius: 10px;
+    background-color: #e9f7ff;
+  }
+  
+  button {
+    padding: 10px 20px;
+    font-size: 1em;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+/* Botón de Inicio */
+#back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  max-width: 8%;
+  cursor: pointer;
+}
+  
+  #dark-mode-btn {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+  }
+  
+  #shuffle-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #00A6D7;
+    color: white;
+  }
+  
+  #next-movement-btn {
+    background-color: #00A6D7;
+    color: white;
+  }
