@@ -10,6 +10,12 @@ body {
   align-items: center;
 }
 
+/* Modo oscuro inicio*/
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+
 .app-container {
   margin-top: 70px; /* Ajuste del contenido principal (para evitar superposición con el header) */
   width: 100%;
@@ -25,10 +31,96 @@ h1.title {
   color: #00A6D7;
 }
 
-/* Modo oscuro */
-body.dark-mode {
-  background-color: #333;
+/* Botones */
+button {
+  background-color: #00A6D7;
   color: white;
+  padding: 10px 20px;
+  font-size: 1em;
+  margin: 10px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #007AA5;
+}
+
+/* Contenedor de la imagen */
+#image-container {
+  margin: 20px 0;
+}
+
+#image-container img {
+  max-width: 150px;
+  height: auto;
+}
+
+/* Contenedor de los botones */
+#games-section {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 10px;
+  justify-items: center;
+  margin-bottom: 20px;
+}
+
+
+/*Header*/
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*background-color: #fff;
+  border-bottom: 2px solid #e3e3e3;
+  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);*/
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Logo del Header */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-family: 'Montserrat', sans-serif;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #999;
+  cursor: pointer;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+}
+
+/*Botón de Inicio */
+/*#back-btn {
+  position: fixed;
+  top: 20px;
+  left: 20px;
+  max-width: 8%;
+  height: 40px;
+  width: auto;
+}*/
+
+/* Botón de acción en el Header (modo oscuro u otros) */
+.header-action {
+  display: flex;
+  align-items: center;
+}
+
+/* Botón de Modo Oscuro */
+#dark-mode-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
 }
 
 /* From Uiverse.io by ami-hp */ 
@@ -93,59 +185,10 @@ body.dark-mode {
 .darkThemeBtn input:checked ~ span {
   background-color: #333;
 }
-/* Modo oscuro */
+/* Modo oscuro fin */
 
-/* Botones */
-button {
-  background-color: #00A6D7;
-  color: white;
-  padding: 10px 20px;
-  font-size: 1em;
-  margin: 10px;
-  border: none;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-button:hover {
-  background-color: #007AA5;
-}
-
-/* Botón de Inicio */
-#back-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  max-width: 8%;
-}
-
-/* Botón de Modo Oscuro */
-#dark-mode-btn {
-  position: fixed;
-  top: 20px;
-  right: 20px;
-}
-
-/* Contenedor de la imagen */
-#image-container {
-  margin: 20px 0;
-}
-
-#image-container img {
-  max-width: 150px;
-  height: auto;
-}
-
-/* Contenedor de los botones */
-#games-section {
-  display: grid;
-  grid-template-columns: 1fr 1fr 1fr;
-  gap: 10px;
-  justify-items: center;
-  margin-bottom: 20px;
-}
-
-/* Botón de Juego Aleatorio */
+/* Footer
+Botón de Juego Aleatorio */
 footer {
   margin-top: 20px;
   display: flex;
@@ -160,9 +203,7 @@ footer {
   cursor: pointer;
 }
 
-
-
-/* Estilos Responsivos para Imágenes y Textos */
+/* Estilos Responsivos */
 @media (max-width: 1024px) {
   /* Imágenes */
   #image-container img {
@@ -170,7 +211,7 @@ footer {
   }
 
   #back-btn {
-    max-width: 15%; /* Logo/botón de inicio más grande */
+    max-width: 100%; /* Logo/botón de inicio más grande */
   }
 
   /* Textos */
@@ -181,6 +222,18 @@ footer {
   button {
     font-size: 0.9em; /* Botones ligeramente más compactos */
   }
+
+  .main-header {
+    padding: 10px;
+  }
+
+  .logo-container {
+    font-size: 1rem;
+  }
+
+  .header-logo {
+    height: 60px;
+  }
 }
 
 @media (max-width: 768px) {
@@ -190,7 +243,7 @@ footer {
   }
 
   #back-btn {
-    max-width: 15%; /* Logo/botón ajustado */
+    max-width: 100%; /* Logo/botón ajustado */
   }
 
   /* Textos */
@@ -205,6 +258,18 @@ footer {
   p.greeting {
     font-size: 0.9rem; /* Texto auxiliar más pequeño */
   }
+
+  .main-header {
+    padding: 10px;
+  }
+
+  .logo-container {
+    font-size: 1rem;
+  }
+
+  .header-logo {
+    height: 60px;
+  }
 }
 
 @media (max-width: 480px) {
@@ -213,11 +278,11 @@ footer {
     max-width: 80px; /* Imagen reducida para móviles */
   }
 
-  #back-btn {
-    max-width: 20%; /* Logo/botón más visible en pantallas pequeñas */
+   #back-btn {
+    max-width: 100%; /*Logo/botón más visible en pantallas pequeñas */
   }
 
-  /* Textos */
+  /*Textos */
   h1.title {
     font-size: 1.2rem; /* Título más pequeño */
   }
@@ -228,8 +293,20 @@ footer {
 
   p.greeting {
     font-size: 0.8rem; /* Texto auxiliar compacto */
+
+  .main-header {
+    padding: 10px;
   }
   
+  .logo-container {
+    font-size: 1rem;
+  }
+  
+  .header-logo {
+    height: 60px;
+  }
+}
+
   /* Contenedor de los botones */
   #games-section {
     display: grid;

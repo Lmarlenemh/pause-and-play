@@ -1,11 +1,11 @@
 // Lista de posiciones de equilibrio
 const balances = [
-    'Levanta un pie y trata de mantener el equilibrio mientras cuentas hasta 10🦵',
-    'Mantén los brazos extendidos como un avión y equilibra sobre un pie ✈️',
-    'Coloca las manos en la cabeza y mantén el equilibrio en puntas de pie 👣',
-    'Inclínate hacia adelante como si fueras una tabla inclinada 🔄',
-    'Levanta una rodilla y sosténla con ambas manos durante 10 segundos ⏳',
-    'Estira los brazos hacia arriba y mantente firme como un árbol 🌳'
+    'Levanta un pie y trata de mantener el equilibrio mientras cuentas hasta 10',
+    'Mantén los brazos extendidos como un avión y equilibra sobre un pie ',
+    'Coloca las manos en la cabeza y mantén el equilibrio en puntas de pie ',
+    'Inclínate hacia adelante como si fueras una tabla inclinada ',
+    'Levanta una rodilla y sosténla con ambas manos durante 10 segundos ',
+    'Estira los brazos hacia arriba y mantente firme como un árbol '
   ]
   
   let currentIndex = -1 // Índice de la posición actual
