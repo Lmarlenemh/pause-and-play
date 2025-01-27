@@ -44,6 +44,54 @@ function touchEnd(e) {
     const touch = e.changedTouches[0]
     const pieceId = activePiece.dataset.id
 
+
+    // Detecta si la pieza está sobre un slot
+    const slots = document.querySelectorAll('.puzzle-slot')
+    let placed = false
+
+    slots.forEach(slot => {
+      const slotRect = slot.getBoundingClientRect()
+      const touchX = touch.clientX
+      const touchY = touch.clientY
+
+      // Verifica si el toque está dentro del slot
+      if (
+        touchX > slotRect.left &&
+        touchX < slotRect.right &&
+        touchY > slotRect.top &&
+        touchY < slotRect.bottom &&
+        slot.dataset.id === pieceId // Compara el id del slot con el id de la pieza
+      ) {
+        // Coloca la pieza en el slot correcto
+        slot.appendChild(activePiece)
+        activePiece.style.position = 'relative'
+        activePiece.style.left = '0'
+        activePiece.style.top = '0'
+        activePiece.style.width = '100%' // Restaurar tamaño original
+        activePiece.style.height = '100%' // Restaurar tamaño original
+        activePiece.style.zIndex = '1'
+        activePiece.draggable = false
+        activePiece.style.cursor = 'default'
+
+        placed = true
+        checkPuzzleCompletion() // Verifica si el puzzle está completo
+      }
+    })
+
+    // Si no se coloca en un slot válido, regresa a su posición original
+    if (!placed) {
+      originalParent.appendChild(activePiece)
+      activePiece.style.position = 'relative'
+      activePiece.style.left = '0'
+      activePiece.style.top = '0'
+      activePiece.style.width = '100%' // Restaurar tamaño original
+      activePiece.style.height = '100%' // Restaurar tamaño original
+      activePiece.style.zIndex = '1'
+    }
+
+    activePiece = null
+
+    /*
     // Detectar el slot más cercano
     const slot = document.elementFromPoint(touch.clientX, touch.clientY)
     if (slot && slot.classList.contains('puzzle-slot') && slot.dataset.id === pieceId) {
@@ -71,6 +119,7 @@ function touchEnd(e) {
     }
 
     activePiece = null
+    */
   }
 }
 //Para el movil
