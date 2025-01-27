@@ -2,6 +2,66 @@
 const puzzleBoard = document.getElementById('puzzle-board')
 const puzzlePieces = document.getElementById('puzzle-pieces')
 
+
+//Para el movil
+let activePiece = null
+let offsetX = 0
+let offsetY = 0
+
+// Manejo de eventos táctiles
+function touchStart(e) {
+  const touch = e.touches[0]
+  const piece = e.target
+
+  if (piece.classList.contains('puzzle-piece')) {
+    activePiece = piece
+    offsetX = touch.clientX - piece.getBoundingClientRect().left
+    offsetY = touch.clientY - piece.getBoundingClientRect().top
+
+    piece.style.position = 'absolute'
+    piece.style.zIndex = '1000'
+  }
+}
+
+function touchMove(e) {
+  if (activePiece) {
+    const touch = e.touches[0]
+    activePiece.style.left = `${touch.clientX - offsetX}px`
+    activePiece.style.top = `${touch.clientY - offsetY}px`
+  }
+}
+
+function touchEnd(e) {
+  if (activePiece) {
+    const touch = e.changedTouches[0]
+    const pieceId = activePiece.dataset.id
+
+    // Detectar el slot más cercano
+    const slot = document.elementFromPoint(touch.clientX, touch.clientY)
+    if (slot && slot.classList.contains('puzzle-slot') && slot.dataset.id === pieceId) {
+      slot.appendChild(activePiece) // Posicionar la pieza en el slot
+      activePiece.style.position = 'relative'
+      activePiece.style.left = '0'
+      activePiece.style.top = '0'
+      activePiece.style.zIndex = '1'
+      activePiece.draggable = false // Desactivar arrastre
+      activePiece.style.cursor = 'default'
+
+      // Verificar si el puzzle está completo
+      checkPuzzleCompletion()
+    } else {
+      // Si no está en el lugar correcto, devolver la pieza a su posición original
+      activePiece.style.position = 'relative'
+      activePiece.style.left = '0'
+      activePiece.style.top = '0'
+      activePiece.style.zIndex = '1'
+    }
+
+    activePiece = null
+  }
+}
+//Para el movil
+
 // Piezas del puzzle
 const pieces = [
   { id: 1, image: '../../assets/images/piece1.png' },
@@ -81,9 +141,14 @@ function generatePuzzle() {
     pieceElement.src = piece.image
     pieceElement.draggable = true
 
-    // Eventos de arrastre
-    pieceElement.addEventListener('dragstart', dragStart)
-    pieceElement.addEventListener('dragend', dragEnd)
+  // Eventos de arrastre (ratón)
+  pieceElement.addEventListener('dragstart', dragStart)
+  pieceElement.addEventListener('dragend', dragEnd)
+
+  // Eventos táctiles
+  pieceElement.addEventListener('touchstart', touchStart)
+  pieceElement.addEventListener('touchmove', touchMove)
+  pieceElement.addEventListener('touchend', touchEnd)
 
     puzzlePieces.appendChild(pieceElement)
   })

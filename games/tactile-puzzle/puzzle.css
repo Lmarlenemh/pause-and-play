@@ -64,6 +64,9 @@ body.dark-mode {
   height: 100%; /* Las piezas llenan el espacio del grid */
   cursor: grab;
   object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
+  /*para el movil*/
+  position: relative; /* Cambia a absolute durante el arrastre */
+  touch-action: none; /* Desactiva el comportamiento predeterminado de desplazamiento en dispositivos táctiles */
 }
 
 .puzzle-piece.dragging {
