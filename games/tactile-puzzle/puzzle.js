@@ -126,15 +126,15 @@ function touchEnd(e) {
 
 // Piezas del puzzle
 const pieces = [
-  { id: 1, image: '../../assets/images/piece1.png' },
-  { id: 2, image: '../../assets/images/piece2.png' },
-  { id: 3, image: '../../assets/images/piece3.png' },
-  { id: 4, image: '../../assets/images/piece4.png' },
-  { id: 5, image: '../../assets/images/piece5.png' },
-  { id: 6, image: '../../assets/images/piece6.png' },
-  { id: 7, image: '../../assets/images/piece7.png' },
-  { id: 8, image: '../../assets/images/piece8.png' },
-  { id: 9, image: '../../assets/images/piece9.png' }
+  { id: 1, image: '../../assets/images/puzzle1/piece1.png' },
+  { id: 2, image: '../../assets/images/puzzle1/piece2.png' },
+  { id: 3, image: '../../assets/images/puzzle1/piece3.png' },
+  { id: 4, image: '../../assets/images/puzzle1/piece4.png' },
+  { id: 5, image: '../../assets/images/puzzle1/piece5.png' },
+  { id: 6, image: '../../assets/images/puzzle1/piece6.png' },
+  { id: 7, image: '../../assets/images/puzzle1/piece7.png' },
+  { id: 8, image: '../../assets/images/puzzle1/piece8.png' },
+  { id: 9, image: '../../assets/images/puzzle1/piece9.png' }
 ]
 
 // Rompecabezas disponibles
