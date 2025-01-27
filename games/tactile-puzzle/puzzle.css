@@ -71,6 +71,7 @@ body.dark-mode {
 
 .puzzle-piece.dragging {
   opacity: 0.5;
+  cursor: grabbing;
 }
 
   

@@ -7,6 +7,7 @@ const puzzlePieces = document.getElementById('puzzle-pieces')
 let activePiece = null
 let offsetX = 0
 let offsetY = 0
+let originalParent = null
 
 // Manejo de eventos táctiles
 function touchStart(e) {
@@ -15,14 +16,20 @@ function touchStart(e) {
 
   if (piece.classList.contains('puzzle-piece')) {
     activePiece = piece
+    originalParent = piece.parentNode
+
+    // Calcula el desplazamiento inicial del toque
     offsetX = touch.clientX - piece.getBoundingClientRect().left
     offsetY = touch.clientY - piece.getBoundingClientRect().top
 
     piece.style.position = 'absolute'
     piece.style.zIndex = '1000'
+    piece.style.width = `${piece.offsetWidth}px`
+    piece.style.height = `${piece.offsetHeight}px`    
   }
 }
 
+// Manejo del movimiento táctil
 function touchMove(e) {
   if (activePiece) {
     const touch = e.touches[0]
@@ -31,6 +38,7 @@ function touchMove(e) {
   }
 }
 
+// Manejo del final del arrastre táctil
 function touchEnd(e) {
   if (activePiece) {
     const touch = e.changedTouches[0]
@@ -43,6 +51,8 @@ function touchEnd(e) {
       activePiece.style.position = 'relative'
       activePiece.style.left = '0'
       activePiece.style.top = '0'
+      activePiece.style.width = '100%' // Restaurar tamaño original
+      activePiece.style.height = '100%' // Restaurar tamaño original      
       activePiece.style.zIndex = '1'
       activePiece.draggable = false // Desactivar arrastre
       activePiece.style.cursor = 'default'
@@ -51,9 +61,12 @@ function touchEnd(e) {
       checkPuzzleCompletion()
     } else {
       // Si no está en el lugar correcto, devolver la pieza a su posición original
+      originalParent.appendChild(activePiece)
       activePiece.style.position = 'relative'
       activePiece.style.left = '0'
       activePiece.style.top = '0'
+      activePiece.style.width = '100%' // Restaurar tamaño original
+      activePiece.style.height = '100%' // Restaurar tamaño original
       activePiece.style.zIndex = '1'
     }
 
