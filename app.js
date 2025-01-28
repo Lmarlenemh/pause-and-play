@@ -8,18 +8,6 @@ document.getElementById('dark-mode-btn').addEventListener('click', function () {
   document.body.classList.toggle('dark-mode')
 })
 
-// Función para redirigir a un juego aleatorio para la pagina de inicio
-/*function redirectToRandomGame(category) {
-  const games = gamesByCategory[category]
-  if (games && games.length > 0) {
-    const randomIndex = Math.floor(Math.random() * games.length)
-    window.location.href = games[randomIndex]
-  } else {
-    alert('No hay juegos disponibles para esta categoría.')
-  }
-}
-*/
-
 // Juegos disponibles
 const games = [
   'games/breathing/index.html',
@@ -46,7 +34,5 @@ const games = [
 document.getElementById('shuffle-btn').addEventListener('click', function () {
   const randomIndex = Math.floor(Math.random() * games.length)
   const randomGame = games[randomIndex]
-  window.location.href = randomGame.url
-  /*const randomGame = games[Math.floor(Math.random() * games.length)]
-  window.location.href = randomGame*/
+  window.location.href = randomGame
 })
