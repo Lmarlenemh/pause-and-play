@@ -1,13 +1,10 @@
-/* General */
 body {
   font-family: 'Open Sans', sans-serif; font-weight: 400;
   background-color: white;
   margin: 0;
   padding: 0;
   color: #333;
-  /*display: flex;
-  flex-direction: column;
-  align-items: center;*/
+  align-items: center;
 }
 
 /* Modo oscuro inicio*/
@@ -17,9 +14,6 @@ body.dark-mode {
 }
 
 .app-container {
-  /*margin-top: 70px;  Ajuste del contenido principal (para evitar superposición con el header) */
-  /*width: 100%;
-  max-width: 600px;*/
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -42,22 +36,13 @@ h1.title {
   margin-bottom: 20px;
 }
 
-/* Botones */
 button {
   padding: 10px 20px;
   font-size: 1em;
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  /*background-color: #00A6D7;
-  color: white;
-  margin: 10px;*/
 }
-
-/* Contenedor de la imagen 
-#image-container {
-  margin: 20px 0;
-}*/
 
 #mascot-img {
   max-width: 20%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
@@ -69,9 +54,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /*background-color: #fff;
-  border-bottom: 2px solid #e3e3e3;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);*/
+  background-color: #fff;
   padding: 10px 20px;
   position: fixed;
   top: 0;
@@ -85,9 +68,7 @@ button {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
-  font-weight: bold;
   color: #999;
   cursor: pointer;
 }
@@ -96,16 +77,6 @@ button {
   height: 60px;
   width: auto;
 }
-
-/*Botón de Inicio */
-/*#back-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  max-width: 8%;
-  height: 40px;
-  width: auto;
-}*/
 
 /* Botón de acción en el Header (modo oscuro u otros) */
 .header-action {
@@ -182,10 +153,9 @@ button {
 .darkThemeBtn input:checked ~ span {
   background-color: #333;
 }
-/* Modo oscuro fin */
+/* Modo oscuro fin 
 
-/* Footer
-Botón de Juego Aleatorio */
+Footer y Botón de Juego Aleatorio */
 footer {
   margin-top: 20px;
   display: flex;
@@ -203,8 +173,9 @@ footer {
 /* Estilos Responsivos */
 @media (max-width: 1024px) {
   /* Imágenes */
-  #image-container img {
-    max-width: 120px; /* Ajusta tamaño de imagen para pantallas medianas */
+  #mascot-img {
+    max-width: 50%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
   }
 
   #back-btn {
@@ -231,11 +202,16 @@ footer {
   .header-logo {
     height: 60px;
   }
+  
+  .app-container{
+    height: 80vh;
+  }
+
 }
 
 @media (max-width: 768px) {
   /* Imágenes */
-  #image-container img {
+  #mascot-img {
     max-width: 100px; /* Reduce aún más el tamaño de la imagen */
   }
 
@@ -252,10 +228,6 @@ footer {
     font-size: 0.85em; /* Tamaño de texto en botones más pequeño */
   }
 
-  p.greeting {
-    font-size: 0.9rem; /* Texto auxiliar más pequeño */
-  }
-
   .main-header {
     padding: 10px;
   }
@@ -267,12 +239,17 @@ footer {
   .header-logo {
     height: 60px;
   }
+
+  .app-container{
+    height: 80vh;
+  }
 }
 
 @media (max-width: 480px) {
   /* Imágenes */
-  #image-container img {
-    max-width: 80px; /* Imagen reducida para móviles */
+  #mascot-img {
+    max-width: 50%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
   }
 
    #back-btn {
@@ -288,9 +265,6 @@ footer {
     font-size: 0.8em; /* Botones compactos */
   }
 
-  p.greeting {
-    font-size: 0.8rem; /* Texto auxiliar compacto */
-
   .main-header {
     padding: 10px;
   }
@@ -302,14 +276,9 @@ footer {
   .header-logo {
     height: 60px;
   }
-}
 
-  /* Contenedor de los botones */
-  #games-section {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 10px;
-    justify-items: center;
-    margin-bottom: 20px;
+  .app-container{
+    height: 50vh;
   }
+
 }
