@@ -1,25 +1,34 @@
 body {
-  font-family: 'Open Sans', sans-serif;
+  font-family: 'Open Sans', sans-serif; font-weight: 400;
   background-color: white;
   margin: 0;
   padding: 0;
   color: #333;
+  align-items: center;
 }
-
+  
 /* Modo oscuro */
 body.dark-mode {
   background-color: #333;
   color: white;
 }
-
+  
 .game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  /*height: 120vh;*/
-  text-align: center;
+  height: 80vh;
   padding: 20px;
+  text-align: center;
+}
+ 
+/* Título */
+h1.title {
+  font-family: 'Montserrat', sans-serif; font-weight: 600;
+  text-align: center;
+  font-size: 2rem;
+  color: #00A6D7;
 }
 
 .instruction {
@@ -73,7 +82,6 @@ body.dark-mode {
   opacity: 0.5;
   cursor: grabbing;
 }
-
   
 button {
   padding: 10px 20px;
