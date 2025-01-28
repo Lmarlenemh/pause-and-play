@@ -23,7 +23,7 @@ function touchStart(e) {
     offsetY = touch.clientY - piece.getBoundingClientRect().top
 
     piece.style.position = 'absolute'
-    piece.style.zIndex = '100'
+    piece.style.zIndex = '1000'
     piece.style.width = `${piece.offsetWidth}px`
     piece.style.height = `${piece.offsetHeight}px`    
   }
