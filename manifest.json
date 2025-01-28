@@ -1,6 +1,6 @@
 {
   "name": "Pause & Play",
-  "short_name": "Pause and Play",
+  "short_name": "Pause & Play",
   "description": "PWA para ayudar a manejar ataques de ansiedad con minijuegos y ejercicios.",
   "start_url": "./index.html",
   "display": "standalone",

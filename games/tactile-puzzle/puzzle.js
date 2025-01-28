@@ -90,36 +90,6 @@ function touchEnd(e) {
     }
 
     activePiece = null
-
-    /*
-    // Detectar el slot más cercano
-    const slot = document.elementFromPoint(touch.clientX, touch.clientY)
-    if (slot && slot.classList.contains('puzzle-slot') && slot.dataset.id === pieceId) {
-      slot.appendChild(activePiece) // Posicionar la pieza en el slot
-      activePiece.style.position = 'relative'
-      activePiece.style.left = '0'
-      activePiece.style.top = '0'
-      activePiece.style.width = '100%' // Restaurar tamaño original
-      activePiece.style.height = '100%' // Restaurar tamaño original      
-      activePiece.style.zIndex = '1'
-      activePiece.draggable = false // Desactivar arrastre
-      activePiece.style.cursor = 'default'
-
-      // Verificar si el puzzle está completo
-      checkPuzzleCompletion()
-    } else {
-      // Si no está en el lugar correcto, devolver la pieza a su posición original
-      originalParent.appendChild(activePiece)
-      activePiece.style.position = 'relative'
-      activePiece.style.left = '0'
-      activePiece.style.top = '0'
-      activePiece.style.width = '100%' // Restaurar tamaño original
-      activePiece.style.height = '100%' // Restaurar tamaño original
-      activePiece.style.zIndex = '1'
-    }
-
-    activePiece = null
-    */
   }
 }
 //Para el movil

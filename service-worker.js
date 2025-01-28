@@ -6,7 +6,7 @@ self.addEventListener("install", event => {
           "/index.html",
           "/style.css",
           "/app.js",
-          "/assets/images/maskot.png"
+          "/assets/images/mascot.png"
         ]);
       })
     );

@@ -98,29 +98,31 @@ document.getElementById('creative-btn').addEventListener('click', function () {
 
 // Juegos disponibles
 const games = [
-  { url: 'games/breathing/index.html' },
-  { url: 'games/sensory-5-4-3-2-1/index.html' },
-  { url: 'games/mental-guess-color/index.html' },
-  { url: 'games/physical-movement/index.html' },
-  { url: 'games/tactile-maze/index.html' },
-  { url: 'games/creative-acronyms/index.html' },
-  { url: 'games/breathing-blow-candle/index.html' },
-  { url: 'games/breathing-guided/index.html' },
-  { url: 'games/sensory-ice-cube/index.html' },
-  { url: 'games/sensory-imaginary-rain/index.html' },
-  { url: 'games/mental-intervals/index.html' },
-  { url: 'games/mental-positive-associations/index.html' },
-  { url: 'games/physical-balance/index.html' },
-  { url: 'games/physical-walk/index.html' },
-  { url: 'games/tactile-bubbles/index.html' },
-  { url: 'games/tactile-puzzle/index.html' },
-  { url: 'games/creative-poetry/index.html' },
-  { url: 'games/creative-metaphors/index.html' },
+  'games/breathing/index.html',
+  'games/sensory-5-4-3-2-1/index.html',
+  'games/mental-guess-color/index.html',
+  'games/physical-movement/index.html',
+  'games/tactile-maze/index.html',
+  'games/creative-acronyms/index.html',
+  'games/breathing-blow-candle/index.html',
+  'games/breathing-guided/index.html',
+  'games/sensory-ice-cube/index.html',
+  'games/sensory-imaginary-rain/index.html',
+  'games/mental-intervals/index.html',
+  'games/mental-positive-associations/index.html',
+  'games/physical-balance/index.html',
+  'games/physical-walk/index.html',
+  'games/tactile-bubbles/index.html',
+  'games/tactile-puzzle/index.html',
+  'games/creative-poetry/index.html',
+  'games/creative-metaphors/index.html'
 ]
 
 // Botón de Juego Aleatorio
 document.getElementById('shuffle-btn').addEventListener('click', function () {
-  const randomIndex = Math.floor(Math.random() * games.length)
+  /*const randomIndex = Math.floor(Math.random() * games.length)
   const randomGame = games[randomIndex]
-  window.location.href = randomGame.url
+  window.location.href = randomGame.url*/
+    const randomGame = games[Math.floor(Math.random() * games.length)]
+    window.location.href = randomGame
 })
