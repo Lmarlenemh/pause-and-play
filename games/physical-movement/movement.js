@@ -1,12 +1,15 @@
 // Lista de movimientos
 const movements = [
-    'Salta como un conejo 🐇',
-    'Toca tus pies sin doblar las rodillas 👣',
-    'Gira sobre tu eje tres veces 🔄',
-    'Camina hacia atrás por 5 pasos 🚶‍♂️',
-    'Levanta una rodilla y luego la otra como marchando 🦵',
-    'Estírate como si intentaras tocar el cielo 🌤️',
-    'Aplaude 10 veces rápido 👏'
+    'Extiende ambos brazos hacia el techo como si quisieras tocarlo',
+    'Toca tus pies sin doblar las rodillas',
+    'Lleva el talón hacia los glúteos mientras mantienes el equilibrio',
+    'Gira sobre tu eje tres veces',
+    'De pie, inclínate hacia adelante desde la cintura, manteniendo las piernas rectas',
+    'Camina hacia atrás por 5 pasos',
+    'Levanta una rodilla y luego la otra como marchando',
+    'De pie, dobla una rodilla hacia atrás y sujeta tu pie con la mano',
+    'Estírate como si intentaras tocar el cielo',
+    'De pie, coloca una mano en la cadera y levanta el brazo opuesto por encima de la cabeza'
   ]
   
   let currentIndex = -1 // Índice del movimiento actual
