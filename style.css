@@ -54,11 +54,6 @@ button {
   margin: 10px;*/
 }
 
-button:hover {
-  background-color: #FFF165;
-  color: #333;
-}
-
 /* Contenedor de la imagen 
 #image-container {
   margin: 20px 0;
