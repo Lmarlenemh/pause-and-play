@@ -1,34 +1,25 @@
 body {
-  font-family: 'Open Sans', sans-serif; font-weight: 400;
+  font-family: 'Open Sans', sans-serif;
   background-color: white;
   margin: 0;
   padding: 0;
   color: #333;
-  align-items: center;
 }
-  
+
 /* Modo oscuro */
 body.dark-mode {
   background-color: #333;
   color: white;
 }
-  
+
 .game-container {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  height: 80vh;
+  /*height: 120vh;*/
+  text-align: center;
   padding: 20px;
-  text-align: center;
-}
- 
-/* Título */
-h1.title {
-  font-family: 'Montserrat', sans-serif; font-weight: 600;
-  text-align: center;
-  font-size: 2rem;
-  color: #00A6D7;
 }
 
 .instruction {
@@ -82,6 +73,7 @@ h1.title {
   opacity: 0.5;
   cursor: grabbing;
 }
+
   
 button {
   padding: 10px 20px;
@@ -260,16 +252,6 @@ footer {
   .header-logo {
     height: 60px;
   }
-
-  .puzzle-piece {
-    width: 100%; /* Las piezas llenan el espacio del grid */
-    height: 100%; /* Las piezas llenan el espacio del grid */
-    cursor: grab;
-    object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
-    /*para el movil*/
-    position: relative; /* Cambia a absolute durante el arrastre */
-    touch-action: none; /* Desactiva el comportamiento predeterminado de desplazamiento en dispositivos táctiles */
-  }
 }
 
 @media (max-width: 768px) {
@@ -303,8 +285,8 @@ footer {
   }
 
   .puzzle-piece {
-    width: 100%; /* Las piezas llenan el espacio del grid */
-    height: 100%; /* Las piezas llenan el espacio del grid */
+    width: 50%; /* Las piezas llenan el espacio del grid */
+    height: 50%; /* Las piezas llenan el espacio del grid */
     cursor: grab;
     object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
     /*para el movil*/
@@ -344,8 +326,8 @@ footer {
   }
 
   .puzzle-piece {
-    width: 100%; /* Las piezas llenan el espacio del grid */
-    height: 100%; /* Las piezas llenan el espacio del grid */
+    width: 50%; /* Las piezas llenan el espacio del grid */
+    height: 50%; /* Las piezas llenan el espacio del grid */
     cursor: grab;
     object-fit: cover; /* Asegura que la imagen se ajuste correctamente */
     /*para el movil*/
