@@ -90,6 +90,36 @@ function touchEnd(e) {
     }
 
     activePiece = null
+
+    /*
+    // Detectar el slot más cercano
+    const slot = document.elementFromPoint(touch.clientX, touch.clientY)
+    if (slot && slot.classList.contains('puzzle-slot') && slot.dataset.id === pieceId) {
+      slot.appendChild(activePiece) // Posicionar la pieza en el slot
+      activePiece.style.position = 'relative'
+      activePiece.style.left = '0'
+      activePiece.style.top = '0'
+      activePiece.style.width = '100%' // Restaurar tamaño original
+      activePiece.style.height = '100%' // Restaurar tamaño original      
+      activePiece.style.zIndex = '1'
+      activePiece.draggable = false // Desactivar arrastre
+      activePiece.style.cursor = 'default'
+
+      // Verificar si el puzzle está completo
+      checkPuzzleCompletion()
+    } else {
+      // Si no está en el lugar correcto, devolver la pieza a su posición original
+      originalParent.appendChild(activePiece)
+      activePiece.style.position = 'relative'
+      activePiece.style.left = '0'
+      activePiece.style.top = '0'
+      activePiece.style.width = '100%' // Restaurar tamaño original
+      activePiece.style.height = '100%' // Restaurar tamaño original
+      activePiece.style.zIndex = '1'
+    }
+
+    activePiece = null
+    */
   }
 }
 //Para el movil
@@ -239,6 +269,9 @@ generatePuzzle()
 
 
 
+
+
+
 // Botón de Inicio
 document.getElementById('back-btn').addEventListener('click', function () {
     window.location.href = '../../index.html'
@@ -251,23 +284,9 @@ document.getElementById('back-btn').addEventListener('click', function () {
   
   // Botón de Juego Aleatorio de juegos táctiles
 const tactileGames = [
-    '../breathing/index.html',
-    '../sensory-5-4-3-2-1/index.html',
-    '../mental-guess-color/index.html',
-    '../physical-movement/index.html',
-    '../tactile-maze/index.html',
-    '../creative-acronyms/index.html',
-    '../breathing-blow-candle/index.html',
-    '../breathing-guided/index.html',
-    '../sensory-ice-cube/index.html',
-    '../sensory-imaginary-rain/index.html',
-    '../mental-intervals/index.html',
-    '../mental-positive-associations/index.html',
-    '../physical-balance/index.html',
-    '../physical-walk/index.html',
-    '../tactile-bubbles/index.html',
-    '../creative-poetry/index.html',
-    '../creative-metaphors/index.html'
+    '../tactile-maze/index.html', // Juego "Laberinto"
+    '../tactile-bubbles/index.html', // Juego "Dibuja con el Dedo"
+    '../tactile-puzzle/index.html' // Juego "Puzzle"
   ]
   
   // Lógica del botón "Juego Aleatorio"
