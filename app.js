@@ -120,9 +120,9 @@ const games = [
 
 // Botón de Juego Aleatorio
 document.getElementById('shuffle-btn').addEventListener('click', function () {
-  /*const randomIndex = Math.floor(Math.random() * games.length)
+  const randomIndex = Math.floor(Math.random() * games.length)
   const randomGame = games[randomIndex]
-  window.location.href = randomGame.url*/
-    const randomGame = games[Math.floor(Math.random() * games.length)]
-    window.location.href = randomGame
+  window.location.href = randomGame.url
+    /*const randomGame = games[Math.floor(Math.random() * games.length)]
+    window.location.href = randomGame*/
 })
