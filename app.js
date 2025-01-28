@@ -123,6 +123,6 @@ document.getElementById('shuffle-btn').addEventListener('click', function () {
   const randomIndex = Math.floor(Math.random() * games.length)
   const randomGame = games[randomIndex]
   window.location.href = randomGame.url
-    /*const randomGame = games[Math.floor(Math.random() * games.length)]
-    window.location.href = randomGame*/
+  /*const randomGame = games[Math.floor(Math.random() * games.length)]
+  window.location.href = randomGame*/
 })
