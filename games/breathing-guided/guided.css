@@ -218,8 +218,14 @@ footer {
     height: 60px;
   }
 
-  .game-container{
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 80vh;
+    padding: 20px;
+    text-align: center;
   }
 
 }
@@ -256,8 +262,14 @@ footer {
     height: 60px;
   }
 
-  .game-container{
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
     height: 80vh;
+    padding: 20px;
+    text-align: center;
   }
 }
 
@@ -293,8 +305,14 @@ footer {
     height: 60px;
   }
 
-  .game-container{
-    height: 50vh;
+  .game-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 80vh;
+    padding: 20px;
+    text-align: center;
   }
 
 }
