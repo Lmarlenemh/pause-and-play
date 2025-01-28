@@ -29,6 +29,7 @@ const movements = [
   
   // Mostrar el primer movimiento al cargar la página
   showNextMovement()
+
   
   // Botón de Inicio
   document.getElementById('back-btn').addEventListener('click', function () {
