@@ -51,61 +51,78 @@ function loadMaze(index) {
   setupDragAndDrop() // Configura la funcionalidad de arrastre
 }
 
+
+
 function setupDragAndDrop() {
-    const startPoint = document.getElementById('start-point')
-    const endPoint = document.getElementById('end-point')
-    const walls = document.querySelectorAll('.wall') // Seleccionar todas las paredes
-  
-    let isDragging = false
-  
-    startPoint.addEventListener('mousedown', function () {
-      isDragging = true
-      startPoint.style.position = 'absolute'
-    })
-  
-    mazeContainer.addEventListener('mousemove', function (e) {
-      if (isDragging) {
-        const rect = mazeContainer.getBoundingClientRect()
-        const x = e.clientX - rect.left - startPoint.offsetWidth / 2
-        const y = e.clientY - rect.top - startPoint.offsetHeight / 2
-  
-        // Restringir el movimiento dentro del laberinto
-        if (x >= 0 && x <= mazeContainer.offsetWidth - startPoint.offsetWidth) {
-          startPoint.style.left = `${x}px`
-        }
-  
-        if (y >= 0 && y <= mazeContainer.offsetHeight - startPoint.offsetHeight) {
-          startPoint.style.top = `${y}px`
-        }
-  
-        // Verificar colisión con las paredes usando un collider más pequeño
-        for (let wall of walls) {
-          const wallRect = wall.getBoundingClientRect()
-          const startRect = startPoint.getBoundingClientRect()
-  
-          const colliderSize = 10 // Área de colisión más pequeña
-  
-          if (
-            startRect.right - colliderSize > wallRect.left &&
-            startRect.left + colliderSize < wallRect.right &&
-            startRect.bottom - colliderSize > wallRect.top &&
-            startRect.top + colliderSize < wallRect.bottom
-          ) {
-            alert('¡Has tocado una pared! Reiniciando...')
-            loadMaze(currentMazeIndex) // Reiniciar laberinto
-            return
-          }
+  const startPoint = document.getElementById('start-point')
+  const endPoint = document.getElementById('end-point')
+  const walls = document.querySelectorAll('.wall') // Seleccionar todas las paredes
+
+  let isDragging = false
+
+  // Función para iniciar el movimiento
+  function startDrag(e) {
+    isDragging = true
+    startPoint.style.position = 'absolute'
+
+    // Obtener las coordenadas iniciales del toque o clic
+    const clientX = e.touches ? e.touches[0].clientX : e.clientX
+    const clientY = e.touches ? e.touches[0].clientY : e.clientY
+
+    const rect = mazeContainer.getBoundingClientRect()
+    offsetX = clientX - rect.left - startPoint.offsetLeft
+    offsetY = clientY - rect.top - startPoint.offsetTop
+  }
+
+  // Función para mover el círculo
+  function drag(e) {
+    if (isDragging) {
+      const clientX = e.touches ? e.touches[0].clientX : e.clientX
+      const clientY = e.touches ? e.touches[0].clientY : e.clientY
+
+      const rect = mazeContainer.getBoundingClientRect()
+      const x = clientX - rect.left - offsetX
+      const y = clientY - rect.top - offsetY
+
+      // Restringir el movimiento dentro del laberinto
+      if (x >= 0 && x <= mazeContainer.offsetWidth - startPoint.offsetWidth) {
+        startPoint.style.left = `${x}px`
+      }
+
+      if (y >= 0 && y <= mazeContainer.offsetHeight - startPoint.offsetHeight) {
+        startPoint.style.top = `${y}px`
+      }
+
+      // Verificar colisión con las paredes
+      for (let wall of walls) {
+        const wallRect = wall.getBoundingClientRect()
+        const startRect = startPoint.getBoundingClientRect()
+
+        const colliderSize = 10 // Área de colisión más pequeña
+
+        if (
+          startRect.right - colliderSize > wallRect.left &&
+          startRect.left + colliderSize < wallRect.right &&
+          startRect.bottom - colliderSize > wallRect.top &&
+          startRect.top + colliderSize < wallRect.bottom
+        ) {
+          alert('¡Has tocado una pared! Reiniciando...')
+          loadMaze(currentMazeIndex) // Reiniciar laberinto
+          return
         }
       }
-    })
-  
-    mazeContainer.addEventListener('mouseup', function () {
+    }
+  }
+
+  // Función para finalizar el movimiento
+  function endDrag(e) {
+    if (isDragging) {
       isDragging = false
-  
+
       // Verificar si se alcanzó la meta
       const startRect = startPoint.getBoundingClientRect()
       const endRect = endPoint.getBoundingClientRect()
-  
+
       if (
         startRect.right > endRect.left &&
         startRect.left < endRect.right &&
@@ -114,8 +131,20 @@ function setupDragAndDrop() {
       ) {
         alert('¡Felicidades, llegaste a la meta! 🎉')
       }
-    })
+    }
   }
+
+  // Eventos para ratón
+  startPoint.addEventListener('mousedown', startDrag)
+  mazeContainer.addEventListener('mousemove', drag)
+  mazeContainer.addEventListener('mouseup', endDrag)
+
+  // Eventos para pantallas táctiles
+  startPoint.addEventListener('touchstart', startDrag)
+  mazeContainer.addEventListener('touchmove', drag)
+  mazeContainer.addEventListener('touchend', endDrag)
+}
+
   
   
   
