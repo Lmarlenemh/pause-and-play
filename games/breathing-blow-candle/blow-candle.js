@@ -62,7 +62,6 @@ const breathingGames = [
   '../physical-movement/index.html',
   '../tactile-maze/index.html',
   '../creative-acronyms/index.html',
-  '../breathing-blow-candle/index.html',
   '../breathing-guided/index.html',
   '../sensory-ice-cube/index.html',
   '../sensory-imaginary-rain/index.html',

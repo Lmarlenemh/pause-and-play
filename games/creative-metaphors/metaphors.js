@@ -26,8 +26,7 @@ const creativeGames = [
   '../physical-walk/index.html',
   '../tactile-bubbles/index.html',
   '../tactile-puzzle/index.html',
-  '../creative-poetry/index.html',
-  '../creative-metaphors/index.html'
+  '../creative-poetry/index.html'
 ]
 
 document.getElementById('shuffle-btn').addEventListener('click', function () {

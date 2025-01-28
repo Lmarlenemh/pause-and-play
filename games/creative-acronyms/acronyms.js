@@ -40,7 +40,6 @@ const creativeGames = [
   '../mental-guess-color/index.html',
   '../physical-movement/index.html',
   '../tactile-maze/index.html',
-  '../creative-acronyms/index.html',
   '../breathing-blow-candle/index.html',
   '../breathing-guided/index.html',
   '../sensory-ice-cube/index.html',

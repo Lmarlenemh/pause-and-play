@@ -266,7 +266,6 @@ const tactileGames = [
     '../physical-balance/index.html',
     '../physical-walk/index.html',
     '../tactile-bubbles/index.html',
-    '../tactile-puzzle/index.html',
     '../creative-poetry/index.html',
     '../creative-metaphors/index.html'
   ]

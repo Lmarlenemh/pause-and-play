@@ -37,7 +37,6 @@ document.getElementById('dark-mode-btn').addEventListener('click', function () {
 // Botón de Juego Aleatorio
 const sensoryGames = [
   '../breathing/index.html',
-  '../sensory-5-4-3-2-1/index.html',
   '../mental-guess-color/index.html',
   '../physical-movement/index.html',
   '../tactile-maze/index.html',

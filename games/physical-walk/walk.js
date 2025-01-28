@@ -23,7 +23,6 @@
     '../mental-intervals/index.html',
     '../mental-positive-associations/index.html',
     '../physical-balance/index.html',
-    '../physical-walk/index.html',
     '../tactile-bubbles/index.html',
     '../tactile-puzzle/index.html',
     '../creative-poetry/index.html',

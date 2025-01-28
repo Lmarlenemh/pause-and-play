@@ -50,7 +50,6 @@ const balances = [
     '../sensory-imaginary-rain/index.html',
     '../mental-intervals/index.html',
     '../mental-positive-associations/index.html',
-    '../physical-balance/index.html',
     '../physical-walk/index.html',
     '../tactile-bubbles/index.html',
     '../tactile-puzzle/index.html',

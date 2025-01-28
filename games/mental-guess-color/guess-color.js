@@ -48,7 +48,6 @@ const colors = [
   const mentalGames = [
     '../breathing/index.html',
     '../sensory-5-4-3-2-1/index.html',
-    '../mental-guess-color/index.html',
     '../physical-movement/index.html',
     '../tactile-maze/index.html',
     '../creative-acronyms/index.html',

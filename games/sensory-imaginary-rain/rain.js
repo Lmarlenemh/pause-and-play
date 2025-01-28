@@ -31,7 +31,6 @@ const sensoryGames = [
   '../breathing-blow-candle/index.html',
   '../breathing-guided/index.html',
   '../sensory-ice-cube/index.html',
-  '../sensory-imaginary-rain/index.html',
   '../mental-intervals/index.html',
   '../mental-positive-associations/index.html',
   '../physical-balance/index.html',
