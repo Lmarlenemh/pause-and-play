@@ -67,8 +67,8 @@ function touchEnd(e) {
         activePiece.style.position = 'relative'
         activePiece.style.left = '0'
         activePiece.style.top = '0'
-        activePiece.style.width = '100%' // Restaurar tamaño original
-        activePiece.style.height = '100%' // Restaurar tamaño original
+        activePiece.style.width = '50%' // Restaurar tamaño original
+        activePiece.style.height = '50%' // Restaurar tamaño original
         activePiece.style.zIndex = '1'
         activePiece.draggable = false
         activePiece.style.cursor = 'default'
@@ -84,8 +84,8 @@ function touchEnd(e) {
       activePiece.style.position = 'relative'
       activePiece.style.left = '0'
       activePiece.style.top = '0'
-      activePiece.style.width = '100%' // Restaurar tamaño original
-      activePiece.style.height = '100%' // Restaurar tamaño original
+      activePiece.style.width = '50%' // Restaurar tamaño original
+      activePiece.style.height = '50%' // Restaurar tamaño original
       activePiece.style.zIndex = '1'
     }
 
