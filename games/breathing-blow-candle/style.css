@@ -43,13 +43,18 @@ button {
   border-radius: 5px;
   cursor: pointer;
 }
+  
+#mascot-img {
+  max-width: 20%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+  height: auto; /* Mantiene las proporciones de la imagen */
+}
 
 /*Header*/
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  /*background-color: #fff;*/
   padding: 10px 20px;
   position: fixed;
   top: 0;

@@ -5,7 +5,7 @@ const acronymContainer = document.getElementById('acronym-container')
 function generateLetters() {
   acronymContainer.innerHTML = '' // Limpiar las letras existentes
   const letters = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  const randomLength = Math.floor(Math.random() * 4) + 3 // Generar entre 3 y 6 letras
+  const randomLength = Math.floor(Math.random() * 3) + 2 // Generar letras
 
   for (let i = 0; i < randomLength; i++) {
     const randomIndex = Math.floor(Math.random() * letters.length)

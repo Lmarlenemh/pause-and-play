@@ -1,10 +1,11 @@
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color: white;
-    margin: 0;
-    padding: 0;
-    color: #333;
-  }
+  font-family: 'Open Sans', sans-serif; font-weight: 400;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  align-items: center;
+}
   
 /* Modo oscuro */
 body.dark-mode {
@@ -12,51 +13,53 @@ body.dark-mode {
   color: white;
 }
   
-  .game-container {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: center;
-    height: 80vh;
-    text-align: center;
-    padding: 20px;
-  }
-  
-  .instruction {
-    font-size: 1.5em;
-    margin-bottom: 20px;
-  }
-  
-  .image-container {
-    margin: 20px 0;
-  }
-  
-  #rain-img {
-    max-width: 20%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
-    height: auto; /* Mantiene las proporciones de la imagen */
-  }
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  padding: 20px;
+  text-align: center;
+}
+ 
+/* Título */
+h1.title {
+  font-family: 'Montserrat', sans-serif; font-weight: 600;
+  text-align: center;
+  font-size: 2rem;
+  color: #00A6D7;
+}
 
-  button {
-    padding: 10px 20px;
-    font-size: 1em;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-
-  #start-sound-btn {
-    background-color: #00A6D7;
-    color: white;
-  }
+.instruction {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
   
-  /*Header*/
+#mascot-img {
+  max-width: 20%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+  height: auto; /* Mantiene las proporciones de la imagen */
+}
+
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+#start-sound-btn {
+  background-color: #00A6D7;
+  color: white;
+}
+  
+/*Header*/
 .main-header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  /*background-color: #fff;
-  border-bottom: 2px solid #e3e3e3;
-  box-shadow: 0px 2px 4px rgba(0, 0, 0, 0.1);*/
+  /*background-color: #fff;*/
   padding: 10px 20px;
   position: fixed;
   top: 0;
@@ -70,9 +73,7 @@ body.dark-mode {
   display: flex;
   align-items: center;
   gap: 10px;
-  font-family: 'Montserrat', sans-serif;
   font-size: 1.2rem;
-  font-weight: bold;
   color: #999;
   cursor: pointer;
 }
@@ -81,16 +82,6 @@ body.dark-mode {
   height: 60px;
   width: auto;
 }
-
-/*Botón de Inicio */
-/*#back-btn {
-  position: fixed;
-  top: 20px;
-  left: 20px;
-  max-width: 8%;
-  height: 40px;
-  width: auto;
-}*/
 
 /* Botón de acción en el Header (modo oscuro u otros) */
 .header-action {
@@ -167,10 +158,9 @@ body.dark-mode {
 .darkThemeBtn input:checked ~ span {
   background-color: #333;
 }
-/* Modo oscuro fin */
+/* Modo oscuro fin 
 
-/* Footer
-Botón de Juego Aleatorio */
+Footer y Botón de Juego Aleatorio */
 footer {
   margin-top: 20px;
   display: flex;
@@ -188,14 +178,10 @@ footer {
 /* Estilos Responsivos */
 @media (max-width: 1024px) {
   /* Imágenes */
-  /*#image-container img {
-    max-width: 20%;  Ajusta tamaño de imagen para pantallas medianas 
-  }*/
-
-  #rain-img {
-    max-width: 50%;
-    height: auto;
-}
+  #mascot-img {
+    max-width: 50%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+  }
 
   #back-btn {
     max-width: 100%; /* Logo/botón de inicio más grande */
@@ -230,14 +216,10 @@ footer {
 
 @media (max-width: 768px) {
   /* Imágenes */
-  /*#image-container img {
-    max-width: 20%;  Reduce aún más el tamaño de la imagen
-  } */
-
-  #rain-img {
-    max-width: 50%;
-    height: auto;
-}
+  #mascot-img {
+    max-width: 50%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+  }
 
   #back-btn {
     max-width: 100%; /* Logo/botón ajustado */
@@ -250,10 +232,6 @@ footer {
 
   button {
     font-size: 0.85em; /* Tamaño de texto en botones más pequeño */
-  }
-
-  p.greeting {
-    font-size: 0.9rem; /* Texto auxiliar más pequeño */
   }
 
   .main-header {
@@ -271,19 +249,14 @@ footer {
   .game-container{
     height: 80vh;
   }
-
 }
 
 @media (max-width: 480px) {
   /* Imágenes */
-  /* #image-container img {
-    max-width: 20%; Imagen reducida para móviles 
-  }*/
-
-  #rain-img {
-    max-width: 50%;
-    height: auto;
-}
+  #mascot-img {
+    max-width: 50%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+  }
 
    #back-btn {
     max-width: 100%; /*Logo/botón más visible en pantallas pequeñas */
@@ -298,9 +271,6 @@ footer {
     font-size: 0.8em; /* Botones compactos */
   }
 
-  p.greeting {
-    font-size: 0.8rem; /* Texto auxiliar compacto */
-
   .main-header {
     padding: 10px;
   }
@@ -313,9 +283,8 @@ footer {
     height: 60px;
   }
 
-.game-container{
-  height: 50vh;
-}
-}
+  .game-container{
+    height: 50vh;
+  }
 
 }

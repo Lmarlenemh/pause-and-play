@@ -54,7 +54,7 @@ button {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  background-color: #fff;
+  /*background-color: #fff;*/
   padding: 10px 20px;
   position: fixed;
   top: 0;
@@ -183,9 +183,9 @@ footer {
   }
 
   /* Textos */
-  h1.title {
-    font-size: 1.8rem; /* Disminuye ligeramente el tamaño del título */
-  }
+  /*h1.title {
+    font-size: 1.8rem;  Disminuye ligeramente el tamaño del título 
+  }*/
 
   button {
     font-size: 0.9em; /* Botones ligeramente más compactos */
@@ -220,9 +220,9 @@ footer {
   }
 
   /* Textos */
-  h1.title {
-    font-size: 1.5rem; /* Título más compacto */
-  }
+  /*h1.title {
+    font-size: 1.5rem;  Título más compacto 
+  }*/
 
   button {
     font-size: 0.85em; /* Tamaño de texto en botones más pequeño */
@@ -257,9 +257,9 @@ footer {
   }
 
   /*Textos */
-  h1.title {
-    font-size: 1.2rem; /* Título más pequeño */
-  }
+  /*h1.title {
+    font-size: 1.2rem;  Título más pequeño 
+  }*/
 
   button {
     font-size: 0.8em; /* Botones compactos */
