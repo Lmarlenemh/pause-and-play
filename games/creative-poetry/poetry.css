@@ -1,0 +1,285 @@
+body {
+  font-family: 'Open Sans', sans-serif; font-weight: 400;
+  background-color: white;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  align-items: center;
+}
+  
+/* Modo oscuro */
+body.dark-mode {
+  background-color: #333;
+  color: white;
+}
+  
+.game-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  height: 80vh;
+  padding: 20px;
+  text-align: center;
+}
+ 
+/* Título */
+h1.title {
+  font-family: 'Montserrat', sans-serif; font-weight: 600;
+  text-align: center;
+  font-size: 2rem;
+  color: #00A6D7;
+}
+
+.instruction {
+  font-size: 1.5em;
+  margin-bottom: 20px;
+}
+  
+button {
+  padding: 10px 20px;
+  font-size: 1em;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+  
+#mascot-img {
+  max-width: 20%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+  height: auto; /* Mantiene las proporciones de la imagen */
+}
+  
+/*Header*/
+.main-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  /*background-color: #fff;*/
+  padding: 10px 20px;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 100;
+}
+
+/* Logo del Header */
+.logo-container {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1.2rem;
+  color: #999;
+  cursor: pointer;
+}
+
+.header-logo {
+  height: 60px;
+  width: auto;
+}
+
+/* Botón de acción en el Header (modo oscuro u otros) */
+.header-action {
+  display: flex;
+  align-items: center;
+}
+
+/* Botón de Modo Oscuro */
+#dark-mode-btn {
+  position: fixed;
+  top: 20px;
+  right: 20px;
+}
+
+/* From Uiverse.io by ami-hp */ 
+.darkThemeBtn * {
+  transition: all 0.3s;
+}
+
+.darkThemeBtn input {
+  width: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+.darkThemeBtn label {
+  border: 1px solid #fff;
+  background: #00A6D7;
+  border-radius: 10px;
+  height: 46px;
+  width: 46px;
+  margin: auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+}
+
+.darkThemeBtn label:active {
+  border-radius: 5px;
+}
+
+.darkThemeBtn label svg {
+  position: absolute;
+  width: 16px;
+  transition: 0.3s;
+  z-index: 1;
+  fill: #FFF165;
+}
+
+.darkThemeBtn label svg.sun {
+  width: 20px;
+  opacity: 0;
+  fill: #00A6D7;
+}
+
+.darkThemeBtn label svg.moon {
+  opacity: 1;
+}
+
+.darkThemeBtn input:checked + label {
+  background: #FFF165;
+}
+
+.darkThemeBtn input:checked + label svg.sun {
+  opacity: 1;
+}
+
+.darkThemeBtn input:checked + label svg.moon {
+  opacity: 0;
+}
+
+.darkThemeBtn input:checked ~ span {
+  background-color: #333;
+}
+/* Modo oscuro fin 
+
+Footer y Botón de Juego Aleatorio */
+footer {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+#shuffle-btn {
+  background-color: #00A6D7;
+  color: white;
+  font-size: 1.5em;
+  border-radius: 50px;
+  cursor: pointer;
+}
+
+/* Estilos Responsivos */
+@media (max-width: 1024px) {
+  /* Imágenes */
+  #mascot-img {
+    max-width: 50%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+  }
+
+  #back-btn {
+    max-width: 100%; /* Logo/botón de inicio más grande */
+  }
+
+  /* Textos */
+  h1.title {
+    font-size: 1.8rem; /* Disminuye ligeramente el tamaño del título */
+  }
+
+  button {
+    font-size: 0.9em; /* Botones ligeramente más compactos */
+  }
+
+  .main-header {
+    padding: 10px;
+  }
+
+  .logo-container {
+    font-size: 1rem;
+  }
+
+  .header-logo {
+    height: 60px;
+  }
+
+  .game-container{
+    height: 80vh;
+  }
+
+}
+
+@media (max-width: 768px) {
+  /* Imágenes */
+  #mascot-img {
+    max-width: 50%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+  }
+
+  #back-btn {
+    max-width: 100%; /* Logo/botón ajustado */
+  }
+
+  /* Textos */
+  h1.title {
+    font-size: 1.5rem; /* Título más compacto */
+  }
+
+  button {
+    font-size: 0.85em; /* Tamaño de texto en botones más pequeño */
+  }
+
+  .main-header {
+    padding: 10px;
+  }
+
+  .logo-container {
+    font-size: 1rem;
+  }
+
+  .header-logo {
+    height: 60px;
+  }
+
+  .game-container{
+    height: 80vh;
+  }
+}
+
+@media (max-width: 480px) {
+  /* Imágenes */
+  #mascot-img {
+    max-width: 50%; /* La imagen ocupará hasta el 20% del ancho del contenedor */
+    height: auto; /* Mantiene las proporciones de la imagen */
+  }
+
+   #back-btn {
+    max-width: 100%; /*Logo/botón más visible en pantallas pequeñas */
+  }
+
+  /*Textos */
+  h1.title {
+    font-size: 1.2rem; /* Título más pequeño */
+  }
+
+  button {
+    font-size: 0.8em; /* Botones compactos */
+  }
+
+  .main-header {
+    padding: 10px;
+  }
+  
+  .logo-container {
+    font-size: 1rem;
+  }
+  
+  .header-logo {
+    height: 60px;
+  }
+
+  .game-container{
+    height: 80vh;
+  }
+
+}
