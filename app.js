@@ -36,3 +36,32 @@ document.getElementById('shuffle-btn').addEventListener('click', function () {
   const randomGame = games[randomIndex]
   window.location.href = randomGame
 })
+
+if ('serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(reg => console.log('Service Worker registrado ✅', reg))
+    .catch(err => console.error('Error registrando el Service Worker ❌', err))
+}
+
+if ('Notification' in window && 'serviceWorker' in navigator) {
+  navigator.serviceWorker.register('/service-worker.js')
+    .then(reg => {
+      console.log('Service Worker registrado ✅')
+
+      // Preguntar al usuario si quiere recibir notificaciones
+      Notification.requestPermission().then(permission => {
+        if (permission === 'granted') {
+          console.log('Notificaciones permitidas ✅')
+
+          reg.showNotification('¡Bienvenido a Pause & Play!', {
+            body: 'Te notificaremos sobre nuevos juegos y actividades 🎮',
+            icon: 'assets/images/logo.png',
+            badge: 'assets/images/badge.png'
+          })
+        } else if (permission === 'denied') {
+          console.warn('Notificaciones bloqueadas ❌')
+        }
+      })
+    })
+    .catch(err => console.error('Error registrando el Service Worker ❌', err))
+}
